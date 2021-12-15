@@ -1,0 +1,15 @@
+<ul
+    class="list-group animate__animated animate__bounceIn" 
+    id="menu-ul">
+
+    <li 
+        *ngFor="let item of menu"
+        [routerLink]="[item.ruta]"
+        routerLinkActive="active"
+        class="list-group-item mt-2"
+        id="li-menu"
+    >
+        {{item.nombre}}
+
+    </li>
+</ul>

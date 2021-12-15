@@ -1,0 +1,45 @@
+<div class="mapa-container" style="background-color: whitesmoke;" #mapa></div>
+
+<div class="row shadow animate__animated animate__zoomIn animate__fast">
+
+    <div class="col-12">
+
+        <label class="form-label text-secondary" style="user-select: none;">
+
+            Zoom: {{zoomLevel | number: '2.2-2'}} <br>
+            Lng, Lat: [{{center[0] |number:'2.4-4'}}, {{center[1] |number:'2.4-4'}}]
+        </label>
+
+        <input 
+            type="range" 
+            class="form-range text-secondary"
+            [value]="zoomLevel"
+            min="0"
+            max="18"
+            id="input-range" 
+            onclick="blur()"
+            (input)="zoomRange(inputRange.value)"
+            #inputRange>
+    </div>
+
+    <div class="col-12">
+
+        <button
+
+            (click)="zoomOut()" 
+            class="btn btn-success botton-zoom" 
+            style="border-radius: 10px;">
+            -
+        </button>
+
+        <button 
+
+            (click)="zoomIn()" 
+            class="btn btn-success botton-zoom float-end" 
+            style="border-radius: 10px;">
+            +
+        </button>
+
+    </div>
+
+</div>

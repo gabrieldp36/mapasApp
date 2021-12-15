@@ -1,1 +1,136 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+
+    width: 100%;
+    height: 100%;
+    color: white; 
+}
+
+.app-background {
+
+    background-color: #303030 !important;
+}
+
+app-menu {
+
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 99999;
+}
+
+#li-menu {
+
+    border-width: 0px;
+    border-radius: 20px;
+    width: 120%;
+    text-align: center;
+    user-select: none;
+    box-shadow: 0px 0px 3px 4px rgba(0.21, 0.21, 0.21, 0.21), 0px 0px 3px 4px rgba(0.24, 0.24, 0.24, 0.24);
+}
+
+#menu-ul.list-group li.active {
+
+    background: rgba(123,31,162);
+    border-color: rgba(123,31,162);
+    color: white;
+}
+
+#menu-ul li:hover {
+
+    background: rgba(123,31,162);
+    border-color: rgba(123,31,162);
+    border-width: 2px;
+    color: white;
+}
+
+#menu-ul li:active {
+
+    background: rgba(123,31,162,0.60);
+    border-color: rgba(123,31,162,0.60);
+}
+
+.botton-zoom {
+
+    background-color: rgba(123,31,162) !important;
+    border: none;
+    box-shadow: none !important;
+}
+
+.botton-zoom:hover {
+
+    background: rgba(123,31,162,0.75) !important;
+    border-color: rgba(123,31,162,0.75) !important;
+}
+
+.botton-zoom:active {
+
+    background: rgba(123,31,162,0.55) !important;
+    border-color: rgba(123,31,162,0.55) !important;
+}
+
+#input-range::-webkit-slider-thumb {
+
+    background:rgba(123,31,162) !important;
+    box-shadow: none;
+}
+
+#input-range::-webkit-slider-thumb:active {
+
+    background:rgba(123,31,162,0.65) !important;
+}
+
+.shadow {
+
+    box-shadow: 0px 0px 3px 4px rgba(0.21, 0.21, 0.21, 0.21), 0px 0px 3px 4px rgba(0.24, 0.24, 0.24, 0.24) !important;
+}
+
+#ul-marcadores {
+
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 99999;
+}
+
+#ul-marcadores li:hover {
+
+    background: rgba(123,31,162);
+    color: white;
+}
+
+#ul-marcadores li:active {
+
+    background: rgba(123,31,162,0.60);
+    color: white;
+}
+
+.li-agregar {
+
+    border-width: 0px !important;
+    border-radius: 20px !important;
+    width: 230px !important;
+    text-align: center !important;
+    user-select: none !important;
+    box-shadow: 0px 0px 3px 4px rgba(0.21, 0.21, 0.21, 0.21), 0px 0px 3px 4px rgba(0.24, 0.24, 0.24, 0.24) !important;
+}
+
+.li-marcador {
+
+    opacity: 0.83 !important;
+    border-width: 0px !important;
+    border-radius: 20px !important;
+    width: 130px !important;
+    text-align: center !important;
+    user-select: none !important;
+    box-shadow: 0px 0px 3px 4px rgba(0.21, 0.21, 0.21, 0.21), 0px 0px 3px 4px rgba(0.24, 0.24, 0.24, 0.24) !important;
+}
+
+.li-marcador:hover {
+
+    opacity: 1 !important;
+}
+
+.button-remove-marker {
+
+    opacity: 0.83 !important;
+}

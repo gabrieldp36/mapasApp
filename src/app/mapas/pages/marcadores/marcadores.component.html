@@ -1,0 +1,39 @@
+<div class="mapa-container" style="background-color: whitesmoke;" #mapa></div>
+
+<ul class="list-group animate__animated animate__zoomIn animate__fast" id="ul-marcadores">
+
+    <li 
+        class="list-group-item li-agregar mt-2"
+        (click)="agregarMarcador()"
+    >
+        + Agregar
+    </li>
+
+    <div 
+        class="row text-center align-items-center justify-content-center" 
+        *ngFor="let marcador of marcadores; let i = index"
+        style="margin-left: 20px;"
+    >
+
+        <div class="col">
+            <li 
+                class="list-group-item li-marcador mt-2"
+                (click)="irMarcador(marcador.marcador!)"
+                [ngStyle]="{'background-color': marcador.color, 'color': 'white'}"
+            >
+                Marcador {{i + 1}}
+                
+            </li>
+        </div>
+
+        <div class="col mt-2" style="margin-left: -45px;">
+            <button 
+                class="btn btn-danger shadow button-remove-marker"
+                (click)="borrarMarcador(i, marcador.marcador!)"
+            > 
+                X 
+            </button>
+        </div>
+    </div>
+
+</ul>
