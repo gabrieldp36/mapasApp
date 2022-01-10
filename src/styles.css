@@ -1,7 +1,5 @@
 html, body {
-
-    width: 100%;
-    height: 100%;
+    
     color: white; 
 }
 
@@ -89,7 +87,7 @@ app-menu {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 99999;
+    z-index: 9999999;
 }
 
 #ul-marcadores li:hover {
@@ -99,6 +97,26 @@ app-menu {
 }
 
 #ul-marcadores li:active {
+
+    background: rgba(123,31,162,0.60);
+    color: white;
+}
+
+#ul-miUbicacion {
+
+    position: fixed;
+    top: 5px;
+    right: 20px;
+    z-index: 9999999;
+}
+
+#ul-miUbicacion li:hover {
+
+    background: rgba(123,31,162);
+    color: white;
+}
+
+#ul-miUbicacion li:active {
 
     background: rgba(123,31,162,0.60);
     color: white;
@@ -134,3 +152,99 @@ app-menu {
 
     opacity: 0.83 !important;
 }
+
+#loading{
+
+    background-color: #69efae;
+    border-color: #69efae;
+    border-radius: 10px;
+    color: #024a29;
+    height: 40px;
+    line-height: 5px;
+    width: 300px;
+    box-shadow: 0px 0px 3px 4px rgba(0.21, 0.21, 0.21, 0.21), 0px 0px 3px 4px rgba(0.24, 0.24, 0.24, 0.24) !important;
+    margin-top: 50vh !important;
+    z-index: 9999;
+}
+
+.search-container {
+
+    position: fixed;
+    top: 62px;
+    right: 20px;
+    width: 248px;
+    z-index: 9999999;
+    background-color: white;
+    border-radius: 25px !important;
+    padding: 5.5px;
+    box-shadow: 0px 0px 3px 4px rgba(0.21, 0.21, 0.21, 0.21), 0px 0px 3px 4px rgba(0.24, 0.24, 0.24, 0.24) !important;
+}
+
+.input-busquedas {
+
+    border-radius: 20px !important;
+}
+
+.input-busquedas:focus {
+
+    border-color: #7b1fa2;
+    box-shadow: 0 0 0 2.5px #7b1fa2 !important;
+    opacity: 0.90;
+}
+
+.alert-results {
+
+    background-color: rgba(123,31,162,0.85) !important;
+    border-color: rgba(123,31,162,0.85) !important;
+    color: white !important;
+    border-radius: 10px !important;
+}
+
+#ul-search li:hover {
+
+    background: rgba(123,31,162,0.85);
+    color: white;
+}
+
+#ul-search li:active {
+
+    background: rgba(123,31,162,0.85);
+    color: white;
+}
+
+#ul-search li.active {
+
+    background: rgba(123,31,162,0.85);
+    border-color:rgba(123,31,162,0.85);
+    color: white;
+}
+
+.boton-direcciones {
+
+   color: black;
+   border-color: #7b1fa2;
+   box-shadow: none !important;
+}
+
+.boton-direcciones:hover {
+
+    background: rgba(123,31,162) !important;
+    border-color: rgba(123,31,162) !important;
+}
+
+.boton-direcciones:active {
+
+    background: rgba(123,31,162,0.55) !important;
+    border-color: rgba(123,31,162,0.55) !important;
+}
+
+.alert-sinResultados {
+
+    
+    border-radius: 10px !important;
+}
+
+.popup{
+
+    color:  #7b1fa2;
+};

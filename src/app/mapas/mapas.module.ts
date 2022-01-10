@@ -13,6 +13,7 @@ import { MarcadoresComponent } from './pages/marcadores/marcadores.component';
 import { ZoomRangeComponent } from './pages/zoom-range/zoom-range.component';
 
 import { PropiedadesComponent } from './pages/propiedades/propiedades.component';
+import { BusquedasComponent } from './components/busquedas/busquedas.component';
 
 @NgModule({
 
@@ -22,7 +23,8 @@ import { PropiedadesComponent } from './pages/propiedades/propiedades.component'
     FullScreenComponent,
     MarcadoresComponent,
     ZoomRangeComponent,
-    PropiedadesComponent
+    PropiedadesComponent,
+    BusquedasComponent
   ],
 
   imports: [

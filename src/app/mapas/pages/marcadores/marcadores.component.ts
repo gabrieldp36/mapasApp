@@ -17,8 +17,8 @@ interface MarcadorColor {
     `
       .mapa-container {
 
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
       }
 
       li {
@@ -113,8 +113,9 @@ export class MarcadoresComponent implements AfterViewInit, OnDestroy {
 
     const {lng, lat} = marcador.getLngLat();
 
-    this.mapa.flyTo( { 
-      
+    this.mapa.flyTo({
+
+      zoom: 15,
       center: [lng, lat],
     });
   };

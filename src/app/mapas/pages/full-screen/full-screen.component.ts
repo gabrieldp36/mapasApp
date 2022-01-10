@@ -1,39 +1,49 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 
-import * as mapboxgl from 'mapbox-gl';
+import Swal from 'sweetalert2';
+
+import { PlacesService } from '../../services/places.service';
 
 @Component({
+
   selector: 'app-full-screen',
   templateUrl: './full-screen.component.html',
   styles: [
 
     `
-      .mapa-container {
+      .loading-location {
 
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
       }
+
     `
   ],
 })
 export class FullScreenComponent implements AfterViewInit {
 
-  public mapa!: mapboxgl.Map;
+ 
+  get userLocationReady(): boolean {
 
-  @ViewChild('mapa') divMapa!: ElementRef;
+    return this.placesServices.isUserLocationReady;
+  };
 
-  public zoomLevel: number = 11;
+  get errorLocation(): boolean {
 
-  public center: [number, number] = [-58.438296572466726, -34.60621120094729];
+    return this.placesServices.errorLocation;
+  };
 
-  ngAfterViewInit(): void {
+  constructor (private placesServices: PlacesService) {};
 
-    this.mapa = new mapboxgl.Map({
+  async ngAfterViewInit() {
 
-      container: this.divMapa.nativeElement,
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: this.center,
-      zoom: this.zoomLevel,
-    });
+    if (!navigator.geolocation) {
+    
+      Swal.fire( 'Error' , 'El navegador no soporta la geolocalización.', 'error');
+
+    } else {
+
+      await this.placesServices.getUserLocation().then();
+    };
   };
 };

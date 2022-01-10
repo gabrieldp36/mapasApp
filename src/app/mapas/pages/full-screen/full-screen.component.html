@@ -1,1 +1,18 @@
-<div #mapa class="mapa-container" style="background-color: whitesmoke;"></div>
+<div
+
+  *ngIf="!userLocationReady && !errorLocation"
+  class="container alert alert-info text-center mb-3"
+  id="loading">
+
+  Obteniendo la geolocalización...
+
+</div>
+
+<div
+  *ngIf="userLocationReady && !errorLocation"
+  class='mapa-containers text-dark'
+>
+
+ <app-busquedas></app-busquedas>
+
+</div>

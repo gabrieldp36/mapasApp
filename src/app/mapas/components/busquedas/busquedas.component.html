@@ -1,0 +1,94 @@
+<div
+  #mapa 
+  class='mapa-container text-dark'
+  style="background-color: whitesmoke;"
+>
+</div>
+
+<ul 
+  *ngIf="userLocationReady && !errorLocation"
+  class="list-group animate__animated animate__zoomIn animate__fast" 
+  id="ul-miUbicacion">
+
+  <li 
+    class="list-group-item li-agregar mt-2"
+    style="width: 250px !important;"
+    (click)="irUbicacionActual()"
+    
+  >
+    Mi ubicación
+  </li>
+
+</ul>
+
+<div 
+  *ngIf="userLocationReady && !errorLocation"
+  class="search-container animate__animated animate__zoomIn animate__fast">
+
+  <input 
+    type="text"
+    class="form-control input-busquedas"
+    placeholder="Buscar lugar..."
+    autocomplete="off"
+    #inputSearch
+    (keyup)="getSugerencias($event, inputSearch.value)"
+  >
+ 
+  <div 
+    *ngIf="isLoadingPlaces"
+    class="alert alert-primary alert-results mt-2 text-center"
+  >
+
+    <h6> Cargando </h6>
+    <span> Por favor espere...</span>
+
+  </div>
+
+  <div 
+    *ngIf="places?.length === 0 && !isLoadingPlaces"
+    class="alert alert-danger alert-sinResultados mt-2 text-center"
+  >
+
+    <h6> Sin resultados </h6>
+    <span> ingrese otra búsqueda </span>
+
+  </div>
+
+  <div 
+    *ngIf="places?.length! > 0 && !isLoadingPlaces && inputSearch.value.length > 0"
+    class="mt-2" 
+    style="border-radius: 25px;">
+
+    <ul class="list-group" id="ul-search">
+
+      <li 
+        *ngFor="let place of places"
+        class="list-group-item list-group-item-action mb-2 pointer"
+        [class.active] = "place.id === selectedId"
+        (click)="flyTo(place)"
+      >
+
+        <p style="margin-bottom: 8px;">
+          
+          {{place.place_name}}
+        </p>
+
+        <button 
+        
+          class="btn btn-sm btn-outline-primary float-end boton-direcciones"
+          [ngClass]="(place.id === selectedId) ? 'white' : '' "
+          (click)="getDirections(place)"
+          
+        >
+
+          Direcciones
+  
+        </button>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>

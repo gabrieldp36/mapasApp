@@ -24,7 +24,7 @@ export class MenuComponent  {
   public menu: MenuItem[] = [
 
     {
-      nombre:'Pantalla completa',
+      nombre:'Geolocalización',
       ruta: './mapas/fullscreen',
     },
 
