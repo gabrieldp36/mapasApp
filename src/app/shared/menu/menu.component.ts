@@ -39,7 +39,7 @@ export class MenuComponent  {
     },
 
     {
-      nombre:'Propiedades',
+      nombre:'Mini Mapas',
       ruta:'./mapas/propiedades',
     },
   ];

@@ -23,7 +23,9 @@
 
 <div 
   *ngIf="userLocationReady && !errorLocation"
-  class="search-container animate__animated animate__zoomIn animate__fast">
+  class="search-container animate__animated animate__zoomIn animate__fast"
+  [ngClass]="(esconderMostrarBuscador) ? 'hidden' : 'display'"
+  >
 
   <input 
     type="text"
@@ -45,7 +47,7 @@
   </div>
 
   <div 
-    *ngIf="places?.length === 0 && !isLoadingPlaces"
+    *ngIf="places?.length === 0 && !isLoadingPlaces && inputSearch.value.length > 0"
     class="alert alert-danger alert-sinResultados mt-2 text-center"
   >
 
@@ -59,7 +61,9 @@
     class="mt-2" 
     style="border-radius: 25px;">
 
-    <ul class="list-group" id="ul-search">
+    <ul 
+      class="list-group" 
+      id="ul-search">
 
       <li 
         *ngFor="let place of places"
@@ -90,5 +94,21 @@
     </ul>
 
   </div>
+
+</div>
+
+<div 
+  *ngIf="mostrarBtn"
+  id="div-btn-resultados"
+>
+  <button 
+    class="btn btn-success" 
+    id="btn-resultados"
+    (click)="ocultarMostrarBuscador()"
+
+  > 
+    {{ (esconderMostrarBuscador) ? 'Mostrar buscador' : 'Ocultar buscador' }}
+  
+  </button>
 
 </div>

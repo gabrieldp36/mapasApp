@@ -37,6 +37,45 @@ import { Route } from '../../interfaces/directions';
 
         color: white;
       }
+
+      #div-btn-resultados {
+
+        position: fixed;
+        top: 225px; 
+        left: 27px; 
+        z-index: 9999;
+      }
+
+      #btn-resultados {
+
+        box-shadow: none;
+        background: rgba(25,135,84,0.85);
+        border-color: rgba(25,135,84,0.85);
+        color: white;
+        border-radius: 20px;
+      }
+
+      #btn-resultados:hover {
+
+        background: rgba(25,135,84,0.65);
+        border-color: rgba(25,135,84,0.65);
+      }
+
+      #btn-resultados:active {
+
+        background: rgba(25,135,84,0.55);
+        border-color: rgba(25,135,84,0.55);
+      }
+
+      .hidden {
+
+        visibility: hidden !important;
+      }
+
+      .display {
+
+        visibility: visible !important;
+      }
     `
   ],
 })
@@ -59,6 +98,10 @@ export class BusquedasComponent implements AfterViewInit {
   public markers: mapboxgl.Marker[] = [];
 
   public polyLinePopup!: mapboxgl.Popup;
+
+  public mostrarBtn: boolean = false;
+
+  public esconderMostrarBuscador: boolean = false;
 
   get userLocationReady(): boolean {
 
@@ -151,12 +194,16 @@ export class BusquedasComponent implements AfterViewInit {
           this.places = resp.features;
 
           this.createMarkersFromPlaces(this.places);
+
+          (this.places.length > 0) ? this.mostrarBtn = true : this.mostrarBtn = false;
         });
       }, 350);
 
     } else {
 
       setTimeout( () => {
+
+        this.mostrarBtn = false;
 
         this.selectedId = '';
 
@@ -171,7 +218,7 @@ export class BusquedasComponent implements AfterViewInit {
           this.polyLinePopup.remove();
         };
 
-      }, 500);
+      }, 700);
     };
   };
 
@@ -320,5 +367,12 @@ export class BusquedasComponent implements AfterViewInit {
     `)
     .setLngLat([lng,lat])
     .addTo(this.mapa);
+  };
+
+  // Ocultar o mostrar el buscador
+
+  ocultarMostrarBuscador(): void {
+
+    this.esconderMostrarBuscador = !this.esconderMostrarBuscador;
   };
 };
