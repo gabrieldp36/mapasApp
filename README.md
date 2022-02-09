@@ -1,27 +1,29 @@
-# MapasApp
+# Mapas App.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
+Esta aplicación utiliza la librería de MapBox para mostrar un mapa interactivo con el cual podremos conocer nuestra geolocalización, buscar lugares de interés, dibujar rutas que conecten la posición actual del usuario con el lugar de destino, conocer la distancia del recorrido y el tiempo estimado del mismo, calculado para un viaje promedio en auto.
 
-## Development server
+Asimismo, la aplicación ofrece controles específicos para gestionar el zoom del mapa, la posibilidad de añadir marcadores, los cuales son almacenados en forma persistente y se actualizan cada vez que se los reubica en el mapa. También grafica la utilización simultánea de varios mini mapas interactivos.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Pueden visitar la App haciendo click en el siguiente link: https://mapas-app-angular.herokuapp.com/mapas/fullscreen
 
-## Code scaffolding
+### Notas:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Este proyecto fue generado con [Angular CLI] versión 13.0.2.
 
-## Build
+Recuerden reconstruir los módulos de Node:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+npm install
+```
 
-## Running unit tests
+Y luego, para probar la app en desarrollo, ejecuten el siguiente comando:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+ng serve -o
+```
 
-## Running end-to-end tests
+Para construir el build, recuerden:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+ng build --configuration=production
+```
